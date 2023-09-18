@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infoeste 2023</title>
     <link rel="stylesheet" href="assets/style.css">
@@ -16,7 +17,7 @@
 </head>
 <body onload="selecionarPalestrante('google')">
     <header class="cabecalho">
-        <div id="cabeca" class="d-flex justify-content-around align-items-center">
+        <div id="cabecalho-fixo" class="d-flex justify-content-around align-items-center cabeca">
             <a href="index.html" class="sem-sublinhado"><h1 id="text">35º INFOESTE</h1></a>
             <!-- Menu "Eventos" com submenu -->
             <div class="dropdown">
@@ -73,15 +74,17 @@
 
             <img id="img" src="fotos/esse.png" alt="">
         </div>
-        <div class="conteudo">
-            <img src="fotos/Texto do seu parágrafo (1).png" alt="">
+            
 </header>
+<div id="foto">
+    <img src="fotos/Texto do seu parágrafo (1).png" alt="">
+</div>
 
     <div class="d-flex justify-content-center">
         <h1>PALESTRANTES</h1>
     </div>
     <div class="palestras d-flex justify-content-center align-content-center border flex-column" >
-        <div class="botao-selecionar-palestrantes d-flex justify-content-start"  >
+        <div class="botao-selecionar-palestrantes d-flex justify-content-center"  >
             <button id="google" class="botao-participante" onclick="selecionarPalestrante('google'), selecionarBotao(this)">Google</button>
             <button id="curso-em-video" class="botao-participante" onclick="selecionarPalestrante('curso-em-video'), selecionarBotao(this)">Curso em Video</button>
             <button id="totvs" class="botao-participante" onclick="selecionarPalestrante('totvs'), selecionarBotao(this)">Totvs</button>
@@ -157,6 +160,33 @@
             </div>
             
         </div>
+
+        <div class="parceiros">
+            <h1 class="tituloP">Colaboradores</h1>
+            <div class="colab">
+                <div class="fotos d-flex flex-row justify-content-between">
+                    <a href="#"><img src="imagem/A2Go.png" alt=""></a>
+                    <a href="#"><img src="imagem/B3.svg" alt=""></a>
+                    <a href="#"><img src="imagem/cobmais.png" alt=""></a>
+                    <a href="#"><img src="imagem/EGestora.png" alt=""></a>
+                    <a href="#"><img src="imagem/EscolaComunicacao.png" alt=""></a>
+                </div>
+                <div class="fotos d-flex flex-row justify-content-between">
+                    <a href="#"><img src="imagem/Havan.png" alt=""></a>
+                    <a href="#"><img src="imagem/Itau.png" alt=""></a>
+                    <a href="#"><img src="imagem/logo-espaco goumert.jpg" alt=""></a>
+                    <a href="#"><img src="imagem/Magalu.png" alt=""></a>
+                    <a href="#"><img src="imagem/NEDHU.png" alt=""></a>
+                </div>
+                <div class="fotos d-flex flex-row justify-content-between">
+                    <a href="#"><img src="imagem/rubcube.svg" alt=""></a>
+                    <a href="#"><img src="imagem/VericodeExperiencie.png" alt=""></a>
+                    <a href="#"><img src="imagem/Wilson.png" alt=""></a>
+                </div>
+                
+            </div>
+        </div>
+            
     
 
     

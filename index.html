@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infoeste 2023</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/other.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="assets/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="selecionarPalestrante('google')">
+    <header class="cabecalho">
+        <div id="cabeca" class="d-flex justify-content-around align-items-center">
+            <a href="index.html" class="sem-sublinhado"><h1 id="text">35º INFOESTE</h1></a>
+            <!-- Menu "Eventos" com submenu -->
+            <div class="dropdown">
+                <a id="itens_cabeca" class="nav-link dropdown-toggle" href="#" id="eventosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Eventos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="eventosDropdown">
+                    <a class="dropdown-item" href="#">1ºNETWORKING NIGHT</a>
+                    <a class="dropdown-item" href="#">17º Festa linux</a>
+                    <a class="dropdown-item" href="#">17º Maratona de programação</a>
+                    <a class="dropdown-item" href="#">1º E-SPORTs NIGHT</a>
+
+                </div>
+                
+            </div>
+
+            <!-- Menu "Palestras" com submenu -->
+            <div class="dropdown">
+                <a id="itens_cabeca" class="nav-link dropdown-toggle" href="#" id="palestrasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Palestras
+                </a>
+                <div class="dropdown-menu" aria-labelledby="palestrasDropdown">
+                    <a class="dropdown-item" href="#">Google</a>
+                    <a class="dropdown-item" href="#">META</a>
+                    <a class="dropdown-item" href="#">Spotify</a>
+                    <a class="dropdown-item" href="#">Curso em Vídeo</a>
+                    <a class="dropdown-item" href="#">TOTVS</a>
+                </div>
+            </div>
+
+            <!-- Menu "Inscrições" com submenu -->
+            <div class="dropdown">
+                <a id="itens_cabeca" class="nav-link dropdown-toggle" href="#" id="inscricoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Inscrições
+                </a>
+                <div class="dropdown-menu" aria-labelledby="inscricoesDropdown">
+                    <a class="dropdown-item" href="#">Instruções</a>
+                    <a class="dropdown-item" href="#">Formulário</a>
+                    <a class="dropdown-item" href="#">Prazos</a>
+                </div>
+            </div>
+
+            <!-- Menu "Contatos" com submenu -->
+            <div class="dropdown">
+                <a id="itens_cabeca" class="nav-link dropdown-toggle" href="#" id="contatosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Contatos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="contatosDropdown">
+                    <a class="dropdown-item" href="#">E-mail</a>
+                    <a class="dropdown-item" href="#">Telefone</a>
+                    <a class="dropdown-item" href="#">Endereço</a>
+                </div>
+            </div>
+
+            <img id="img" src="fotos/esse.png" alt="">
+        </div>
+        <div class="conteudo">
+            <img src="fotos/Texto do seu parágrafo (1).png" alt="">
+</header>
+
+    <div class="d-flex justify-content-center">
+        <h1>PALESTRANTES</h1>
+    </div>
+    <div class="palestras d-flex justify-content-center align-content-center border flex-column" >
+        <div class="botao-selecionar-palestrantes d-flex justify-content-start"  >
+            <button id="google" class="botao-participante" onclick="selecionarPalestrante('google'), selecionarBotao(this)">Google</button>
+            <button id="curso-em-video" class="botao-participante" onclick="selecionarPalestrante('curso-em-video'), selecionarBotao(this)">Curso em Video</button>
+            <button id="totvs" class="botao-participante" onclick="selecionarPalestrante('totvs'), selecionarBotao(this)">Totvs</button>
+            <button id="meta" class="botao-participante" onclick="selecionarPalestrante('meta'), selecionarBotao(this)">Meta</button>
+            <button id="spotify" class="botao-participante" onclick="selecionarPalestrante('spotify'), selecionarBotao(this)">Spotify</button>
+        </div>
+        <div id="linha-abaixo-palestrante">
+
+        </div>
+        <div class="conteudo border d-flex flex-column justify-content-center align-items-center">
+            
+            <span class="data-que-a-palestra-ocorrera">data</span>
+            <span class="hora-que-a-palestra-ocorrera">hora</span>
+            <div class="foto-palestrante-e-talks d-flex flex-row justify-content-around">
+                <div class="talk border ">
+                    <h1>Talk 1</h1>
+                    <p class="talk1"> </p>
+                    <h1>Talk 2 </h1>
+                    <p class="talk2"></p>
+                    <h1>Talk 3 </h1>
+                    <p class="talk3"></p>
+                </div>
+                <img class="imagem-palestrante" src="imagem-totvs.jpg" width="600px" height="500px" alt="">
+            </div>
+        </div>
+    </div>
+
+    
+        <h1 class="titulo-eventos d-flex flex-row justify-content-center">EVENTOS</h1>
+        <div class="eventos d-flex flex-column border">
+            <div class="teste">
+                <div class="eventos-encima d-flex flex-row justify-content-between d-flex justify-content-around">
+                <a href="#">
+                    <div class="eventos-itens">
+                        <img src="fotos/imagem-networking.svg" alt="">
+                        <h1>Networking Night</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="eventos-itens">
+                        <img src="fotos/imagem-linux.svg" alt="">
+                        <h1>Festa Linux</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="eventos-itens">
+                        <img src="fotos/imagem-maratona.svg" alt="">
+                        <h1>Maratona de Programação</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </a>
+                </div>
+                <div class="parte-baixo d-flex flex-row justify-content-around" >
+                    <a href="#">
+                        <div class="eventos-itens">
+                            <img src="fotos/imagem-e-sport.svg" alt="">
+                            <h1>E-sports Night</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="eventos-itens">
+                            <img src="fotos/imagem-fippetec.svg" alt="">
+                            <h1>FIPPETEC</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    
+
+    
+
+    <script src="assets/script.js"></script>
+
+</body>
+</html>

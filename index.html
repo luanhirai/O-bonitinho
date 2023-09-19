@@ -40,21 +40,21 @@
                     Palestras
                 </a>
                 <div class="dropdown-menu" aria-labelledby="palestrasDropdown">
-                    <a class="dropdown-item" href="#">Google</a>
-                    <a class="dropdown-item" href="#">META</a>
-                    <a class="dropdown-item" href="#">Spotify</a>
-                    <a class="dropdown-item" href="#">Curso em Vídeo</a>
-                    <a class="dropdown-item" href="#">TOTVS</a>
+                    <a class="dropdown-item" onclick="selecionarPalestrante('google')" href="#pales">Google</a>
+                    <a class="dropdown-item" onclick="selecionarPalestrante('curso-em-video')" href="#pales">Curso em vídeo</a>
+                    <a class="dropdown-item" onclick="selecionarPalestrante('spotify')" href="#pales">Spotify</a>
+                    <a class="dropdown-item" onclick="selecionarPalestrante('meta')" href="#pales">META</a>
+                    <a class="dropdown-item" onclick="selecionarPalestrante('totvs')" href="#pales">TOTVS</a>
                 </div>
             </div>
 
             <!-- Menu "Inscrições" com submenu -->
             <div class="dropdown">
                 <a id="itens_cabeca" class="nav-link dropdown-toggle" href="#" id="inscricoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Inscrições
+                    Login
                 </a>
                 <div class="dropdown-menu" aria-labelledby="inscricoesDropdown">
-                    <a class="dropdown-item" href="#">Instruções</a>
+                    <a class="dropdown-item" href="login.html">Login</a>
                     <a class="dropdown-item" href="#">Formulário</a>
                     <a class="dropdown-item" href="#">Prazos</a>
                 </div>
@@ -77,13 +77,13 @@
             
 </header>
 <div id="foto">
-    <img src="fotos/Texto do seu parágrafo (1).png" alt="">
+    <img class="foto2" src="fotos/Texto do seu parágrafo (1).png" alt="">
 </div>
-
+<main>
     <div class="d-flex justify-content-center">
-        <h1>PALESTRANTES</h1>
+        <h1 id="pales">PALESTRANTES</h1>
     </div>
-    <div class="palestras d-flex justify-content-center align-content-center border flex-column" >
+    <div class="palestras d-flex justify-content-center align-content-center  flex-column" >
         <div class="botao-selecionar-palestrantes d-flex justify-content-center"  >
             <button id="google" class="botao-participante" onclick="selecionarPalestrante('google'), selecionarBotao(this)">Google</button>
             <button id="curso-em-video" class="botao-participante" onclick="selecionarPalestrante('curso-em-video'), selecionarBotao(this)">Curso em Video</button>
@@ -94,28 +94,34 @@
         <div id="linha-abaixo-palestrante">
 
         </div>
-        <div class="conteudo border d-flex flex-column justify-content-center align-items-center">
-            
-            <span class="data-que-a-palestra-ocorrera">data</span>
-            <span class="hora-que-a-palestra-ocorrera">hora</span>
-            <div class="foto-palestrante-e-talks d-flex flex-row justify-content-around">
-                <div class="talk border ">
-                    <h1>Talk 1</h1>
-                    <p class="talk1"> </p>
-                    <h1>Talk 2 </h1>
-                    <p class="talk2"></p>
-                    <h1>Talk 3 </h1>
-                    <p class="talk3"></p>
+        <div class="conteudo  d-flex flex-column justify-content-center align-items-center">
+            <div id="palestra">
+                <div class="d-flex justify-content-center">
+                    <span class="data-que-a-palestra-ocorrera data mr-2">data</span>
+                    <span class="hora-que-a-palestra-ocorrera data ml-2">hora</span>
                 </div>
-                <img class="imagem-palestrante" src="imagem-totvs.jpg" width="600px" height="500px" alt="">
+                
+                <div class="foto-palestrante-e-talks d-flex flex-row justify-content-around">
+                    <div class="talk">
+                        <h1 class="esquema">Apresentação</h1>
+                        <p class="talk1 tata"> </p>
+                        <h1 class="esquema">Palestra </h1>
+                        <p class="talk2 tata"></p>
+                        <h1 class="esquema">Bate-papo </h1>
+                        <p class="talk3 tata"></p>
+                    </div>
+                    <img class="imagem-palestrante" src="imagem-totvs.jpg" width="600px" height="500px" alt="">
+                </div>
             </div>
+            
         </div>
     </div>
 
     
-        <h1 class="titulo-eventos d-flex flex-row justify-content-center">EVENTOS</h1>
-        <div class="eventos d-flex flex-column border">
+        
+        <div class="eventos d-flex flex-column ">
             <div class="teste">
+                <h1 class="titulo-eventos d-flex flex-row justify-content-center">EVENTOS</h1>
                 <div class="eventos-encima d-flex flex-row justify-content-between d-flex justify-content-around">
                 <a href="#">
                     <div class="eventos-itens">
@@ -160,28 +166,30 @@
             </div>
             
         </div>
+</main>
+    
 
         <div class="parceiros">
-            <h1 class="tituloP">Colaboradores</h1>
+            <h1 class="titulo-eventos d-flex flex-row justify-content-center">Colaboradores</h1>
             <div class="colab">
                 <div class="fotos d-flex flex-row justify-content-between">
-                    <a href="#"><img src="imagem/A2Go.png" alt=""></a>
-                    <a href="#"><img src="imagem/B3.svg" alt=""></a>
-                    <a href="#"><img src="imagem/cobmais.png" alt=""></a>
-                    <a href="#"><img src="imagem/EGestora.png" alt=""></a>
-                    <a href="#"><img src="imagem/EscolaComunicacao.png" alt=""></a>
+                    <a href="https://analytics2go.com/"><img src="imagem/A2Go.png" alt=""></a>
+                    <a href="https://www.b3.com.br/pt_br/institucional"><img src="imagem/B3.svg" alt=""></a>
+                    <a href="https://www.cobmais.com.br/"><img src="imagem/cobmais.png" alt=""></a>
+                    <a href="https://www.egestora.com.br/"><img src="imagem/EGestora.png" alt=""></a>
+                    <a href="http://facopp.unoeste.br/facopp/"><img src="imagem/EscolaComunicacao.png" alt=""></a>
                 </div>
                 <div class="fotos d-flex flex-row justify-content-between">
-                    <a href="#"><img src="imagem/Havan.png" alt=""></a>
-                    <a href="#"><img src="imagem/Itau.png" alt=""></a>
-                    <a href="#"><img src="imagem/logo-espaco goumert.jpg" alt=""></a>
-                    <a href="#"><img src="imagem/Magalu.png" alt=""></a>
-                    <a href="#"><img src="imagem/NEDHU.png" alt=""></a>
+                    <a href="https://www.havan.com.br/"><img src="imagem/Havan.png" alt=""></a>
+                    <a href="https://www.itau.com.br/"><img src="imagem/Itau.png" alt=""></a>
+                    <a href="https://www.instagram.com/gourmetuniversitariopp/"><img src="imagem/logo-espaco goumert.jpg" alt=""></a>
+                    <a href="https://www.smarthint.co/"><img src="imagem/Magalu.png" alt=""></a>
+                    <a href="https://www.unoeste.br/AUnoeste/Nedhu"><img src="imagem/NEDHU.png" alt=""></a>
                 </div>
                 <div class="fotos d-flex flex-row justify-content-between">
-                    <a href="#"><img src="imagem/rubcube.svg" alt=""></a>
-                    <a href="#"><img src="imagem/VericodeExperiencie.png" alt=""></a>
-                    <a href="#"><img src="imagem/Wilson.png" alt=""></a>
+                    <a href="https://www.rubcube.com/"><img src="imagem/rubcube.svg" alt=""></a>
+                    <a href="https://vericode.com.br/"><img src="imagem/VericodeExperiencie.png" alt=""></a>
+                    <a href="https://www.alimentoswilson.com.br/"><img src="imagem/Wilson.png" alt=""></a>
                 </div>
                 
             </div>

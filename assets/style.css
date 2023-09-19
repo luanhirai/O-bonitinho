@@ -19,6 +19,10 @@ header.cabecalho {
     margin-top: 150px;
 }
 
+/* .foto2{
+    height: 1000px;
+} */
+
 #cabecalho-fixo{
     position: fixed;
     top: 0;
@@ -32,11 +36,13 @@ header.cabecalho {
 
 #itens_cabeca{
     color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     transition: font-size 300ms ease-in-out;
 }
 #itens_cabeca:hover {
     transition: font-size 300ms ease-in-out, text-decoration 300ms ease-in-out;
-    font-size: 23px;
+    font-size: 22px;
     text-decoration: underline;
 }
 
@@ -117,21 +123,22 @@ button {
 .botao-participante {
     margin:0;
     border-bottom: 2px solid transparent;
-    transition: border 0.6s, font-size 300ms ease-in-out; /* Adicione ambas as transições aqui */
+    transition: border 0.6s, font-size 300ms ease-in-out, background 300ms ease-in-out; /* Adicione ambas as transições aqui */
     padding: 10px 20px;
     font-size: 17px;
+    border-radius: 0px;
 }
-
-
 
 .botao-participante:hover {
     font-size: 20px;
     cursor: pointer;
+    background-color: rgb(238, 238, 238);
+    border-radius: 7px;
 }
 
 .botao-participante.clicado {
     margin: 0;
-    border-bottom-color: black;
+    border-bottom-color:#002638 ;
 }
 
 
@@ -140,6 +147,7 @@ button {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    background-color: rgb(245, 245, 245);
 }
 
 
@@ -162,12 +170,17 @@ button {
     display: inline-block; 
     transform: scale(1); 
     border-radius: 20px;
-    transition: transform 0.3s; 
+    transition: transform 0.3s, background 300ms ease-in-out; 
+    box-shadow: rgba(255, 255, 255, 0.35) 0px -50px 36px -28px inset;    
+
+    background-color: rgb(238, 238, 238);
 }
+
 .eventos a:hover {
     text-decoration: none; 
     color: inherit;
-    transform: scale(1.1); 
+    transform: scale(0.9); 
+    background-color: #a4e7c0;
 }
 
 .eventos-itens img{
@@ -176,10 +189,14 @@ button {
 }
 
 
+
 .titulo-eventos{
-    background-color: #1C3D3D;
     margin: 0;
-    color: white;
+    color: black;
+    font-family: initial;
+    text-decoration: overline;
+    margin-top: 50px;
+    margin-bottom: 120px;
 }
 
 .eventos-encima {
@@ -187,10 +204,14 @@ button {
     margin-top: 50px;
 }
 
+.parte-baixo{
+    margin-bottom: 150px;
+}
+
 
 .teste {
     margin: 0 auto;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    width: 1500px;
 }
 
 
@@ -198,18 +219,66 @@ button {
 .fotos img{
     width: 150px;
     margin-top: 50px;
-
 }
 
 .parceiros{
     margin: 0 auto;
+    width: 1500px;
 }
 
 .tituloP{
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 30px;
+    font-family: initial;
+    text-decoration: overline;
+    margin-top: 80px;
+    font-size: 40px;
+    margin-bottom: 90px;
 }
+
+.imagem-palestrante{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+#palestra{
+    width: 1500px;
+    margin-bottom: 150px;
+}
+
+
+#pales{
+    margin-top: 120px;
+    text-decoration: overline;
+    font-family: initial;
+    margin-bottom: 60px;
+}
+
+.esquema{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.talk{
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border-radius: 10px;
+}
+
+.tata{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.data{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fotos a{
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.fotos a:hover{
+    transform: scale(1.1); 
+}
+
 
 /* Estilos para telas pequenas (por exemplo, telas menores que 576px de largura) */
 @media (max-width: 576px) {
@@ -236,3 +305,174 @@ button {
 }
 
 
+
+
+
+
+
+.cadastro-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cadastro-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-check-label {
+    font-weight: normal;
+}
+
+.btn-cadastrar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-cadastrar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo personalizado para o modal de informações pessoais */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.modal-content {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo personalizado para o modal de boleto */
+.boleto-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.boleto-content {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.qr-code-img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.btn-pagamento {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-pagamento:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+.cadastro-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cadastro-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-cadastrar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-cadastrar:hover {
+    background-color: #0056b3;
+}

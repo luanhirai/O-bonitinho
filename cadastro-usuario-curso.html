@@ -148,7 +148,7 @@
                         <!-- Campos de cadastro de usuário -->
                         <div class="form-group">
                             <label for="cpf">CPF:</label>
-                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                            <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF"  required>
                         </div>
                         <div class="form-group">
                             <label for="ra">RA:</label>
@@ -193,9 +193,60 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        function validarCPF(cpf) {
+            // Remover caracteres não numéricos
+            cpf = cpf.replace(/\D/g, '');
+
+            // Verificar se o CPF tem 11 dígitos
+            if (cpf.length !== 11) {
+                return false;
+            }
+
+            // Verificar se todos os dígitos são iguais (ex: 111.111.111-11)
+            if (/^(\d)\1+$/.test(cpf)) {
+                return false;
+            }
+
+            // Calcular o primeiro dígito verificador
+            let soma = 0;
+            for (let i = 0; i < 9; i++) {
+                soma += parseInt(cpf.charAt(i)) * (10 - i);
+            }
+            let resto = soma % 11;
+            let digito1 = resto < 2 ? 0 : 11 - resto;
+
+            // Verificar o primeiro dígito verificador
+            if (parseInt(cpf.charAt(9)) !== digito1) {
+                return false;
+            }
+
+            // Calcular o segundo dígito verificador
+            soma = 0;
+            for (let i = 0; i < 10; i++) {
+                soma += parseInt(cpf.charAt(i)) * (11 - i);
+            }
+            resto = soma % 11;
+            let digito2 = resto < 2 ? 0 : 11 - resto;
+
+            // Verificar o segundo dígito verificador
+            if (parseInt(cpf.charAt(10)) !== digito2) {
+                return false;
+            }
+
+            return true;
+        }
+
         function mostrarModal() {
-            if($("#cpf")!="")
+            if(!validarCPF($("#cpf").val()))
+            {
+                alert("CPF INVALIDO");
+
+            }
+            else if($("#ra").val().length == 9)
                 document.getElementById("modalOverlay").style.display = "block";
+            else
+                alert("RA INVALIDO");
+
         }
 
         function mostrarBoleto() {

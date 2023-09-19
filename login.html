@@ -51,9 +51,9 @@
             <div class="col-md-6 offset-md-3">
                 <div class="login-container">
                     <h2>Tela de Login</h2>
-                    <form>
+                    <form id="loginForm">
                         <div class="form-group">
-                            <label for="username">Nome de usuário:</label>
+                            <label for="username">CPF:</label>
                             <input type="text" class="form-control" id="username" placeholder="Digite seu nome de usuário" required>
                         </div>
                         <div class="form-group">
@@ -70,5 +70,19 @@
     <!-- Adicione o link para o JavaScript do Bootstrap e o jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Adicione um manipulador de eventos para o envio do formulário
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
+
+            // Realize a autenticação aqui (por exemplo, verifique se o CPF e a senha estão corretos)
+            // Se a autenticação for bem-sucedida, exiba a mensagem de pagamento confirmado
+            // Aqui, estamos usando um alerta como exemplo, você pode substituir por uma lógica real de autenticação
+            alert("Autenticação bem-sucedida. Pagamento confirmado!");
+
+            window.location.href = "cadastro-curso.html";
+        });
+    </script>
 </body>
 </html>

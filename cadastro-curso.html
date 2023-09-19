@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Curso</title>
+    <!-- Adicione o link para o CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilo personalizado para a tela de cadastro de curso */
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .cadastro-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .cadastro-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-cadastrar {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-cadastrar:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="cadastro-container">
+                    <h2>Cadastro de Curso</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="nomeCurso">Nome do Curso:</label>
+                            <input type="text" class="form-control" id="nomeCurso" placeholder="Digite o nome do curso" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="descricaoCurso">Descrição do Curso:</label>
+                            <textarea class="form-control" id="descricaoCurso" rows="4" placeholder="Digite uma descrição do curso" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="horaInicio">Duração:</label>
+                            <input type="time" class="form-control" id="horaInicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requisitosMinimos">Requisitos Mínimos:</label>
+                            <textarea class="form-control" id="requisitosMinimos" rows="3" placeholder="Digite os requisitos mínimos" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-cadastrar btn-block">Cadastrar Curso</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione o link para o JavaScript do Bootstrap e o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

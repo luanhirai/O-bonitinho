@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário em Cursos</title>
+    <!-- Adicione o link para o CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilo personalizado para a tela de cadastro de usuário em cursos - Etapa 1 */
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .cadastro-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .cadastro-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-check-label {
+            font-weight: normal;
+        }
+
+        .btn-cadastrar {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-cadastrar:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo personalizado para o modal de informações pessoais */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+
+        .modal-content input[type="text"],
+        .modal-content input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .modal-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo personalizado para o modal de boleto */
+        .boleto-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .boleto-content {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr-code-img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .btn-pagamento {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-pagamento:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="cadastro-container">
+                    <h2>Cadastro de Usuário em Cursos</h2>
+                    <form>
+                        <!-- Campos de cadastro de usuário -->
+                        <div class="form-group">
+                            <label for="cpf">CPF:</label>
+                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ra">RA:</label>
+                            <input type="text" class="form-control" id="ra" name="ra" placeholder="Digite seu RA" required>
+                        </div>
+                        <button type="button" class="btn btn-cadastrar btn-block" onclick="mostrarModal()">Avançar para Etapa 2</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para informações pessoais -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <h3>Informe seus Dados Pessoais</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nomeCompleto">Nome Completo:</label>
+                    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+                </div>
+                <button type="button" class="modal-button" onclick="mostrarBoleto()">Gerar Boleto</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para boleto -->
+    <div class="boleto-overlay" id="boletoOverlay">
+        <div class="boleto-content">
+            <h3>Boleto</h3>
+            <!-- Inserir a imagem do QR code aqui -->
+            <img class="qr-code-img" src="imagem/qr-code.png" alt="QR Code">
+            <button type="button" class="btn btn-pagamento" onclick="simularPagamento()">Já Paguei</button>
+        </div>
+    </div>
+
+    <!-- Adicione o link para o JavaScript do Bootstrap e o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function mostrarModal() {
+            if($("#cpf")!="")
+                document.getElementById("modalOverlay").style.display = "block";
+        }
+
+        function mostrarBoleto() {
+            document.getElementById("boletoOverlay").style.display = "block";
+        }
+
+        function simularPagamento() {
+            // Lógica para simular o pagamento (pode ser implementada aqui)
+            alert("Pagamento confirmado!");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
